@@ -80,7 +80,7 @@ function addlisteners(){
             updateCartContent();
             showCart();
         });
-        if(temp.some (pro => pro.image === dead))
+        if(temp!=null && temp.some (pro => pro.image === dead))
         updateStatus(one);
     });
 }
