@@ -63,15 +63,20 @@ document.addEventListener('DOMContentLoaded',()=>{
     addlisteners();
 }
 
+let timeid=-1;
+
 function addlisteners(){
     const bag_cart=document.querySelectorAll('.bag_info');
     let temp=localStorage.getItem('cartProducts'); 
     temp=JSON.parse(temp);
+    var c=0;
     bag_cart.forEach((one,index) => {
         var dead=one.previousElementSibling.getAttribute('src');       
         one.addEventListener('click',()=>{
-            last.classList.add('add');
-            setTimeout(remstatus,500);
+            remstatus();  
+            clearTimeout(timeid);            
+            setTimeout(addst,.1); 
+            timeid=setTimeout(remstatus,1700);
             const img=one.previousElementSibling.getAttribute('src');
             const name=one.nextElementSibling.firstElementChild.innerHTML;
             const price=one.nextElementSibling.lastElementChild.innerHTML;
@@ -87,6 +92,10 @@ function addlisteners(){
 
 function remstatus(){
    last.classList.remove('add');
+   
+}
+function addst(){
+    last.classList.add('add');
 }
 
 function updateCartContent(){

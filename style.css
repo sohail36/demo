@@ -336,7 +336,7 @@ button:focus,button:hover{
 .add{
     top:20%;
     opacity: 1;
-    transition: all .5s ease;
+    transition: all .7s ease;
 }
 
 .hide{
