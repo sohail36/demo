@@ -204,3 +204,37 @@ function clearData(){
     });
     
 }
+
+var flag=false;
+
+const textsrch=document.querySelector('.text-search input');
+textsrch.addEventListener('input',()=>{
+    if(!flag)
+    {   flag=true;
+        document.querySelector('.search_icon').addEventListener('click',()=>{
+        console.log('hello');
+        });
+    }
+    var keysearch=(textsrch.value).toLowerCase();
+    const bag=document.querySelectorAll('.product');
+    bag.forEach(ele => {
+        var name=ele.children[2].firstElementChild.innerHTML;
+        if(!name.includes(keysearch)){
+            ele.classList.add('hide');
+        }
+        else{
+            ele.classList.remove('hide');
+        }
+    });
+    
+    
+})
+
+
+
+
+
+
+
+
+
