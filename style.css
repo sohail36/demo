@@ -382,11 +382,13 @@ button:focus,button:hover{
     .sidebar{
         top: 132px;
         width: 90%;
-        height: 90%;
     }
 
     .head .alter{
         display: block;
+    }
+    .origin{
+        height: 90%;
     }
 }
 
