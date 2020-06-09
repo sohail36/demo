@@ -216,15 +216,8 @@ function clearData(){
 
 var flag=false;
 
-const textsrch=document.querySelector('.text-search input');
-textsrch.addEventListener('input',()=>{
-    if(!flag)
-    {   flag=true;
-        document.querySelector('.search_icon').addEventListener('click',()=>{
-        console.log('hello');
-        });
-    }
-    var keysearch=(textsrch.value).toLowerCase();
+function filterSearch(ident) {
+    var keysearch=(ident.value).toLowerCase();
     const bag=document.querySelectorAll('.product');
     bag.forEach(ele => {
         var name=ele.children[2].firstElementChild.innerHTML;
@@ -235,9 +228,18 @@ textsrch.addEventListener('input',()=>{
             ele.classList.remove('hide');
         }
     });
-    
-    
-})
+}
+
+const srch=document.querySelector('.alter input');
+srch.addEventListener('input',()=>{
+    filterSearch(srch);
+});
+
+const textsrch=document.querySelector('.text-search input');
+textsrch.addEventListener('input',()=>{
+    filterSearch(textsrch);
+}); 
+
 
 
 

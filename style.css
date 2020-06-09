@@ -12,6 +12,7 @@ body{
     font-family: 'Lato', sans-serif;
     position: relative;
     overflow-x: hidden;
+    min-height: 100vh;
 }
 
 body::-webkit-scrollbar{
@@ -43,16 +44,36 @@ body::-webkit-scrollbar-track{
     text-transform: capitalize;
     color: blueviolet;
 }
+.head{
+    position: sticky;
+    top: 0;
+    z-index:1;
+    box-shadow: 1px 2px 10px .5px;
+    background-color: white;
+}
+
+.head .alter{
+    border-radius: 5px;
+    margin-bottom: 2rem;
+    margin: .2rem .5rem;
+    display: none;
+}
+
+#alt:focus{
+    background-color: rgb(184, 179, 179);
+}
+
+#alt{
+    padding: .7rem;
+    margin-bottom: .5rem;
+    border-radius: 5px;
+}
+
 
 .home_title{
     display: flex;
     justify-content: space-between;
     padding: 1rem;
-    box-shadow: 1px 2px 10px .5px;
-    position: sticky;
-    top: 0;
-    z-index: 1;
-    background-color:white;
 }
 
 .search{
@@ -101,6 +122,7 @@ input:focus{
 
 }
 
+
 .search:hover,input:hover{
     background-color: rgba(192,192,192,.3);
 }
@@ -139,7 +161,7 @@ input:focus{
     top: 79px;
     right: 0;
     bottom: 0;
-    z-index: 10;
+    z-index: 2;
     overflow-y: auto;
     width: 40%;
     text-align: center;
@@ -150,7 +172,7 @@ input:focus{
 
 .origin{
     transform: translateX(0%);
-    height:90%
+    height: 95%;
 }
 .pro_img img{
     width: 70px;
@@ -343,6 +365,7 @@ button:focus,button:hover{
     display: none;
 }
 
+
 @media screen and (max-width:305px){
     .sidebar{
         top: 112px;
@@ -357,11 +380,18 @@ button:focus,button:hover{
         display:block;
     }
     .sidebar{
+        top: 132px;
         width: 90%;
+        height: 90%;
+    }
+
+    .head .alter{
+        display: block;
     }
 }
 
 @media screen and (min-width:600px){
+
     .sidebar{
         width: 70%;
     }
